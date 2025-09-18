@@ -211,144 +211,44 @@ Lauren Haney
 
 <script>
   // basic intro reveal animation
-  document.addEventListener('DOMContentLoaded', function(){
-    const creds = document.querySelectorAll('.cred');
-    creds.forEach((c,i) => {
-      setTimeout(()=> c.classList.add('show'), 160 + i*160);
-    });
+<div class="credential">
+  <img src="Wisconsin_Badgers_logo.svg(1).png" alt="Wisconsin Football" class="logo">
+  <h2>CREATIVE STUDENT – WISCONSIN FOOTBALL</h2>
+  <p>Shot game-day photography, collaborated with the creative team, and produced engaging content for players and fans.</p>
+</div>
+  .credential {
+  background: #111;
+  color: white;
+  border: 3px solid #D50000; /* Wisconsin red, adjust per logo */
+  border-radius: 15px;
+  width: 80%;
+  margin: 1.5rem 0;
+  padding: 2rem;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease forwards;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 
-    const modalBg = document.getElementById('modalBg');
-    const open = document.getElementById('openModal');
-    const close = document.getElementById('closeModal');
-    open.onclick = ()=> { modalBg.style.display='flex'; modalBg.setAttribute('aria-hidden','false'); }
-    close.onclick = ()=> { modalBg.style.display='none'; modalBg.setAttribute('aria-hidden','true'); }
-    modalBg.addEventListener('click', (e)=> { if(e.target===modalBg){ modalBg.style.display='none'; } });
-    document.getElementById('printBtn').addEventListener('click', ()=> window.print());
-    document.getElementById('downloadPdf').addEventListener('click', ()=> window.print());
-    document.getElementById('downloadBtn').addEventListener('click', ()=> window.print());
-  });
-</script>
+.credential img.logo {
+  width: 80px;
+  height: auto;
+  border-radius: 8px;
+}
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lauren Haney's Credentials</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: white;
-      text-align: center;
-    }
+h2 {
+  margin: 0;
+  color: #FFD700; /* Gold or accent color */
+}
 
-    header {
-      background: red;
-      padding: 2rem;
-      font-size: 2rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
+p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
 
-    .credentials {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 2rem auto;
-      max-width: 900px;
-    }
 
-    .credential {
-      background: white;
-      color: #111;
-      border: 3px solid red;
-      border-radius: 15px;
-      width: 80%;
-      margin: 1.5rem 0;
-      padding: 2rem;
-      box-shadow: 0 8px 15px rgba(0,0,0,0.4);
-      opacity: 0;
-      transform: translateY(50px);
-      animation: fadeInUp 1s ease forwards;
-    }
-
-    .credential:nth-child(1) { animation-delay: 0.3s; }
-    .credential:nth-child(2) { animation-delay: 0.6s; }
-    .credential:nth-child(3) { animation-delay: 0.9s; }
-    .credential:nth-child(4) { animation-delay: 1.2s; }
-    .credential:nth-child(5) { animation-delay: 1.5s; }
-
-    h2 {
-      margin: 0;
-      color: red;
-      font-size: 1.5rem;
-    }
-
-    p {
-      margin-top: 0.5rem;
-      font-size: 1rem;
-      line-height: 1.4;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    footer {
-      margin: 3rem 0;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    LAUREN HANEY’S LENS – CREDENTIALS
-  </header>
-
-  <section class="credentials">
-    <div class="credential">
-      <h2>🎥 VIDEO INTERN – LA CHARGERS</h2>
-      <p>Produced behind-the-scenes video content, collaborated with NFL creative team, and gained professional football media experience.</p>
-    </div>
-
-    <div class="credential">
-      <h2>📸 CREATIVE STUDENT – WISCONSIN FOOTBALL</h2>
-      <p>Captured game-day photography, collaborated with the creative team, and helped build content for players and fans.</p>
-    </div>
-
-    <div class="credential">
-      <h2>🎬 STUDENT COACHES FILM MANAGER – UW MADISON</h2>
-      <p>Filmed practices and games, supported coaches’ analysis, and contributed to team operations behind the scenes.</p>
-    </div>
-
-    <div class="credential">
-      <h2>⚡ VIDEO PRODUCTION RUNNER – NFL ON FOX</h2>
-      <p>Assisted talent, producers, and directors on NFL game broadcasts, gaining exposure to professional sports production.</p>
-    </div>
-
-    <div class="credential">
-      <h2>👕 APPAREL CHAIR – PI BETA PHI</h2>
-      <p>Designed and managed sorority apparel collections, coordinated vendor collaborations, and oversaw creative production.</p>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 Lauren Haney – Built for the NFL Rotational Program
-  </footer>
-
-</body>
-</html>
 

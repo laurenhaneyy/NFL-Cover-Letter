@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Lauren Haney's Sports Credentials</title>
+<style>
+  :root{
+    --accent:#cc0000; /* red accent */
+    --bg:#0f1113;
+    --card:#121416;
+    --muted:#bfc3c8;
+    --glass: rgba(255,255,255,0.03);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background: linear-gradient(180deg,#071014 0%, #0b0c0e 60%);
+    color:#fff;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.45;
+  }
+  header{
+    padding:42px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    max-width:1100px;
+    margin:0 auto;
+  }
+  .brand {
+    display:flex;align-items:baseline;gap:16px;
+  }
+  .logo{
+    font-weight:800; letter-spacing:1px; text-transform:uppercase;
+    color:var(--accent); font-size:20px;
+  }
+  .sub { color:var(--muted); font-size:13px }
+  .cta{
+    background:linear-gradient(90deg,var(--accent),#ff4b4b);
+    border:none;padding:12px 18px;border-radius:10px;color:white;font-weight:700;cursor:pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  }
+
+  main{max-width:1100px;margin:0 auto;padding:20px}
+  .hero{
+    display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-top:30px;
+  }
+  .intro h1{font-size:38px;margin:0 0 8px}
+  .intro p{color:var(--muted);margin:0 0 18px}
+  .card{
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:14px;padding:18px;box-shadow:0 6px 20px rgba(0,0,0,0.6);
+  }
+  .credentials{
+    margin-top:22px;display:flex;flex-direction:column;gap:14px;
+  }
+  .cred{
+    display:flex;gap:14px;align-items:flex-start;padding:14px;border-radius:12px;background:var(--glass);
+    transform:translateY(16px);opacity:0;transition:all .6s ease;
+    border:1px solid rgba(255,255,255,0.03);
+  }
+  .cred.show{transform:none;opacity:1}
+  .cred .tag{min-width:78px;font-weight:700;color:var(--accent);font-size:12px}
+  .cred .meta{color:var(--muted);font-size:14px}
+  .why{margin-top:18px}
+  .why ul{margin:8px 0 0;padding-left:18px;color:var(--muted)}
+
+  footer{max-width:1100px;margin:34px auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+  .download{background:transparent;color:var(--accent);border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:700}
+
+  /* modal styles */
+  .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;padding:20px}
+  .modal{background:linear-gradient(180deg,#0b0b0b,#101213);padding:22px;border-radius:12px;max-width:760px;width:100%;color:#e9eef2}
+  .modal h2{margin:0 0 8px}
+  .modal .letter{white-space:pre-wrap;color:#dbe2e8;font-size:15px;max-height:56vh;overflow:auto;padding-right:6px}
+  .modal .actions{display:flex;gap:10px;margin-top:14px;justify-content:flex-end}
+  .close{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:var(--muted);cursor:pointer}
+  @media (max-width:880px){
+    .hero{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="logo">LAUREN HANEY'S LENS</div>
+    <div class="sub">Sports Storyteller • Creative Photography • Film</div>
+  </div>
+  <div>
+    <button class="cta" id="openModal">VIEW COVER LETTER</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="intro">
+      <h1>Creative + operational experience for the NFL Rotational Program</h1>
+      <p>I combine collegiate + pro internships, broadcast production support, and creative photography to tell sport stories and support operations. Click "VIEW COVER LETTER" to read my full letter — or explore my interactive credentials below.</p>
+
+      <div class="card">
+        <strong>Top Qualifications</strong>
+        <div class="credentials" id="credentials">
+          <div class="cred">
+            <div class="tag">Film</div>
+            <div>
+              <div class="meta"><strong>Student Coaches Film Manager — Wisconsin Football</strong></div>
+              <div class="meta">Season credential + creative shoot experience with the creative team.</div>
+            </div>
+          </div>
+
+          <div class="cred">
+            <div class="tag">Pro Intern</div>
+            <div>
+              <div class="meta"><strong>Video Intern — LA Chargers</strong></div>
+              <div class="meta">On-field capture, production workflows, collaborating with pro photo teams.</div>
+            </div>
+          </div>
+
+          <div class="cred">
+            <div class="tag">Broadcast</div>
+            <div>
+              <div class="meta"><strong>Production Runner — NFL on FOX</strong></div>
+              <div class="meta">Assisted talent & producers in live broadcast environments.</div>
+            </div>
+          </div>
+
+          <div class="cred">
+            <div class="tag">Design</div>
+            <div>
+              <div class="meta"><strong>Apparel & Social Design</strong></div>
+              <div class="meta">Created apparel collection & social campaigns — cross-functional creative experience.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why card" aria-labelledby="whyTitle">
+        <h3 id="whyTitle">Why I should be chosen</h3>
+        <ul>
+          <li>Fast learner who can rotate across departments and deliver immediate value.</li>
+          <li>Experience capturing content in both collegiate and NFL-caliber production environments.</li>
+          <li>Strong collaboration skills with communications, creative and operations teams.</li>
+        </ul>
+      </div>
+    </div>
+
+    <aside>
+      <div class="card">
+        <h4>Contact</h4>
+        <p class="meta">Lauren Haney<br>Email: <a href="mailto:youremail@example.com" style="color:var(--accent)">youremail@example.com</a><br>LinkedIn: <a href="#" style="color:var(--accent)">linkedin.com/in/laurenhaney</a></p>
+        <div style="margin-top:12px">
+          <button class="download" id="downloadPdf">Download Cover Letter (PDF)</button>
+        </div>
+      </div>
+
+      <div style="height:18px"></div>
+
+      <div class="card">
+        <h4>Quick links</h4>
+        <p class="meta">Resume | Portfolio | Reel</p>
+      </div>
+    </aside>
+  </section>
+</main>
+
+<footer>
+  <div class="meta">© Lauren Haney</div>
+  <div>
+    <button class="download" id="printBtn">Print / Save as PDF</button>
+  </div>
+</footer>
+
+<!-- modal -->
+<div class="modal-bg" id="modalBg" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal" role="document">
+    <h2>Cover Letter — Lauren Haney</h2>
+    <div class="letter" id="letter">
+Lauren Haney
+youremail@example.com · (555) 555-5555 · linkedin.com/in/laurenhaney
+
+[Date]
+
+Hiring Team — NFL Rotational Program,
+
+I’m writing to express my enthusiasm for the NFL Rotational Program. I’m a rising senior at the University of Wisconsin–Madison studying Strategic Communications and Journalism, and I bring hands-on sports media experience across collegiate and professional organizations — from serving as a Student Coaches Film Manager and shooting with Wisconsin Football’s creative team to interning as a video production assistant for the LA Chargers and working as a production runner for NFL on FOX.
+
+My background blends technical production skill, creative photography, and a deep knowledge of sports storytelling. I’ve executed content under deadline, collaborated across communications and creative departments, and produced social-first assets that drove engagement. I’m eager to rotate through NFL departments to deepen my understanding of operations, content strategy, and league-level projects while contributing a strong work ethic, creative perspective, and proven ability to learn quickly.
+
+Highlights:
+- Season film credential & creative shoot experience with Wisconsin Football (photo + video).
+- Video intern with the Los Angeles Chargers — learned pro-level workflows and on-field content capture.
+- Production runner for NFL on FOX, supporting talent and production teams in high-pressure broadcast environments.
+- Experience designing apparel collections and social campaigns — practical cross-discipline marketing skills.
+
+I’m excited by the rotational structure that builds broad, operational expertise. I would welcome the chance to bring my camera-forward storytelling, collaborative attitude, and hustle to the NFL and to learn across departments. Thank you for considering my application — I look forward to the opportunity to discuss how I can contribute to the program.
+
+Sincerely,
+Lauren Haney
+    </div>
+
+    <div class="actions">
+      <button class="close" id="closeModal">Close</button>
+      <button class="cta" id="downloadBtn">Download PDF</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // basic intro reveal animation
+  document.addEventListener('DOMContentLoaded', function(){
+    const creds = document.querySelectorAll('.cred');
+    creds.forEach((c,i) => {
+      setTimeout(()=> c.classList.add('show'), 160 + i*160);
+    });
+
+    const modalBg = document.getElementById('modalBg');
+    const open = document.getElementById('openModal');
+    const close = document.getElementById('closeModal');
+    open.onclick = ()=> { modalBg.style.display='flex'; modalBg.setAttribute('aria-hidden','false'); }
+    close.onclick = ()=> { modalBg.style.display='none'; modalBg.setAttribute('aria-hidden','true'); }
+    modalBg.addEventListener('click', (e)=> { if(e.target===modalBg){ modalBg.style.display='none'; } });
+    document.getElementById('printBtn').addEventListener('click', ()=> window.print());
+    document.getElementById('downloadPdf').addEventListener('click', ()=> window.print());
+    document.getElementById('downloadBtn').addEventListener('click', ()=> window.print());
+  });
+</script>
+
+</body>
+</html>
+
